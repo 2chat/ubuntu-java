@@ -8,8 +8,8 @@ RUN apt-get --purge remove openjdk*
 # add oracle jdk repository
 RUN add-apt-repository ppa:webupd8team/java \
 # accept oracle license
-  && echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections \
-  && echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections \
+  && echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
+  && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \
   && apt-get update \
 # install oracle jdk 8 and make it default
   && apt-get -y install oracle-java8-installer \
