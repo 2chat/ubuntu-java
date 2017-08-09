@@ -1,4 +1,4 @@
-FROM 2chat/ubuntu:trusty
+FROM 2chat/ubuntu:xenial
 MAINTAINER Roma Gordeev <roma.gordeev@gmail.com>
 
 ## Remove any existing JDKs
