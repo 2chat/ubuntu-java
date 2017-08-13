@@ -1,8 +1,10 @@
 FROM 2chat/ubuntu:xenial
 MAINTAINER Roma Gordeev <roma.gordeev@gmail.com>
 
-## Remove any existing JDKs
-RUN apt-get --purge remove openjdk*
+# install ffmpeg
+RUN add-apt-repository ppa:jonathonf/ffmpeg-3 \
+  && apt-get update \
+  && apt-get install -y ffmpeg libav-tools x264 x265
 
 ## Install Oracle's JDK
 # add oracle jdk repository
